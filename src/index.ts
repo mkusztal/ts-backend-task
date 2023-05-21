@@ -5,9 +5,9 @@ import bookRoutes from "./routes/books.routes";
 const app = express();
 app.use(cors());
 
-app.use("/", bookRoutes);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use("/", bookRoutes);
 app.get("/", (req: express.Request, res: express.Response) => {
   res.send("Books API");
 });
